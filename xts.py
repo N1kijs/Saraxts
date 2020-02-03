@@ -1,4 +1,5 @@
 from flask import render_template
+app = Flask(__name__)
 
 @app.route('/hello/')
 @app.route('/hello?<name>')
