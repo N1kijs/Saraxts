@@ -12,5 +12,5 @@ def jeff():
 # def hello():
 #     return render_template('hello.html')
 
-if __name__ == '__main__'
+if __name__ == '__main__':
     app.run()
