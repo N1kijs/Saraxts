@@ -7,9 +7,9 @@ app = Flask(__name__)
 
 @app.route('/sheet')
 def hello():
-    needs = sheet['B3']
-    df = needs
-    return df
+    
+    df = pd.read_excel(sheet['B3'])
+    return df.to_html()
 
 
 @app.route('/work')
