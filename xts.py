@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/sup/')
 def jeff():
     df = pr.read_excel('omegalul.xlsx')
     return df.to_html()
