@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     df = pd.read_excel('C:\\Users\\gvido\\Desktop\\Projektu ned\\omegalul.xlsx')
-    return df.to_javascript()
+    return df.to_html()
 
 @app.route('/work')
 def test():
