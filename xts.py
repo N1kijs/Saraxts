@@ -6,7 +6,7 @@ from openpyxl import Workbook, load_workbook
 
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
-stundas == 1
+stundas = 1
 
 def pirunotr():
     sheet.delete_rows(idx=6, amount=7)
@@ -95,8 +95,11 @@ app = Flask(__name__)
 
 @app.route('/sheet')
 def hello():
-    df = pd.read_excel('need.xlsx')
-    return df.to_html()
+    if stundas == 0:
+        return render_template('hello.html')
+    elif stundas > 0:
+        df = pd.read_excel('need.xlsx')
+        return df.to_html()
 
 if __name__ == '__main__':
     app.run()
