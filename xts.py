@@ -1,5 +1,3 @@
-import schedule
-import time
 import pandas as pd
 from flask import Flask, render_template
 from openpyxl import Workbook, load_workbook
