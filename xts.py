@@ -6,7 +6,7 @@ from openpyxl import Workbook, load_workbook
 
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
-stundas = 0
+stundas = 1
 
 def piesk():
     stundas + 1
@@ -99,7 +99,7 @@ schedule.every().tuesday.at("11:20").do(piesk)
 schedule.every().tuesday.at("12:10").do(piesk)
 schedule.every().tuesday.at("13:00").do(piesk)
 schedule.every().tuesday.at("13:50").do(piesk)
-schedule.every().tuesday.at("16:34").do(piesk)
+schedule.every().tuesday.at("14:35").do(piesk)
 schedule.every().tuesday.at("16:20").do(nulite)
 
 schedule.every().wednesday.at("07:20").do(piesk)
