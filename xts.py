@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/sup/')
 def jeff():
-    df = pr.read_excel('omegalul.xlsx')
+    df = pr.read_excel('C:\\Users\\gvido\\Desktop\\Projektu ned\\omegalul.xlsx')
     return df.to_html()
 
 @app.route('/hello/')
