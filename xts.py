@@ -99,8 +99,6 @@ class Scheduler(object):
         runnable_jobs = (job for job in self.jobs if job.should_run)
         for job in sorted(runnable_jobs):
             job.run()
-while True:
-    schedule.run_pending()
 
 schedule.every().monday.at("07:20").do(piesk)
 schedule.every().monday.at("08:50").do(piesk)
@@ -121,7 +119,7 @@ schedule.every().tuesday.at("11:20").do(piesk)
 schedule.every().tuesday.at("12:10").do(piesk)
 schedule.every().tuesday.at("13:00").do(piesk)
 schedule.every().tuesday.at("13:50").do(piesk)
-schedule.every().tuesday.at("17:17").do(piesk)
+schedule.every().tuesday.at("17:19").do(piesk)
 schedule.every().tuesday.at("16:20").do(nulite)
 
 schedule.every().wednesday.at("07:20").do(piesk)
@@ -156,6 +154,9 @@ schedule.every().friday.at("13:00").do(piesk)
 schedule.every().friday.at("13:50").do(piesk)
 schedule.every().friday.at("14:35").do(piesk)
 schedule.every().friday.at("16:20").do(nulite)
+
+while True:
+    schedule.run_pending()
 
 if stundas == 1:
     pirunotr()
