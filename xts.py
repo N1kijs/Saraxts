@@ -84,16 +84,6 @@ def astundev():
     sheet.delete_rows(idx=12, amount=7)
     workbook.save(filename='need.xlsx')
 
-class Scheduler(object):
-    def __init__(self):
-        self.jobs = []
-
-    def run_pending(self):
-
-        runnable_jobs = (piesk for piesk in self.jobs if piesk.should_run)
-        for piesk in sorted(runnable_jobs):
-            piesk.run()
-
 schedule.every().monday.at("07:20").do(piesk)
 schedule.every().monday.at("08:50").do(piesk)
 schedule.every().monday.at("09:40").do(piesk)
