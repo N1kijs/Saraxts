@@ -6,7 +6,7 @@ workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
 
 sheet.delete_rows(idx=6, amount=7)
-
+sheet.delete_rows(idx=10, amount=7)
 
 workbook.save(filename='need.xlsx')
 
