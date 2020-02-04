@@ -32,7 +32,12 @@ def treuncet():
     workbook.save(filename='need.xlsx')
 
 def cetunpie():
-    
+    sheet.delete_rows(idx=4, amount=3)
+    sheet.delete_rows(idx=6, amount=4)
+    sheet.delete_rows(idx=8, amount=3)
+    sheet.delete_rows(idx=10, amount=4)
+    sheet.delete_rows(idx=12, amount=3)
+    sheet.delete_rows(idx=14, amount=4)
     workbook.save(filename='need.xlsx')
 
 def pieunses():
@@ -52,7 +57,7 @@ def astundev():
     workbook.save(filename='need.xlsx')
 
 if stundas == 34:
-    treuncet()
+    cetunpie()
 
 app = Flask(__name__)
 
