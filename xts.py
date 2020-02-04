@@ -50,7 +50,12 @@ def pieunses():
     workbook.save(filename='need.xlsx')
 
 def sesunsep():
-    
+    sheet.delete_rows(idx=4, amount=5)
+    sheet.delete_rows(idx=6, amount=2)
+    sheet.delete_rows(idx=8, amount=5)
+    sheet.delete_rows(idx=10, amount=2)
+    sheet.delete_rows(idx=12, amount=5)
+    sheet.delete_rows(idx=14, amount=2)
     workbook.save(filename='need.xlsx')
 
 def sepunast():
@@ -62,7 +67,7 @@ def astundev():
     workbook.save(filename='need.xlsx')
 
 if stundas == 34:
-    pieunses()
+    sesunsep()
 
 app = Flask(__name__)
 
