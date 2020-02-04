@@ -3,13 +3,13 @@ from flask import Flask
 from flask import render_template
 app = Flask(__name__)
 
-@app.route('/sup/')
-def jeff():
-    df = pr.read_excel('C:\\Users\\gvido\\Desktop\\Projektu ned\\omegalul.xlsx')
+@app.route('/')
+def hello():
+    df = pd.read_excel('C:\\Users\\gvido\\Desktop\\Projektu ned\\omegalul.xlsx')
     return df.to_html()
 
-@app.route('/hello/')
-def hello():
+@app.route('/work')
+def test():
     return render_template('hello.html')
 
 if __name__ == '__main__':
