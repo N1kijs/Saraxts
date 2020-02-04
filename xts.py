@@ -97,7 +97,7 @@ app = Flask(__name__)
 def hello():
     if stundas == 0:
         return render_template('hello.html')
-    if stundas > 0:
+    elif stundas > 0:
         df = pd.read_excel('need.xlsx')
         return df.to_html()
 
