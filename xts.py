@@ -23,7 +23,7 @@ def otruntre():
     workbook.save(filename='need.xlsx')
 
 def treuncet():
-    
+    sheet.delete_rows(idx=4, amount=2)
     workbook.save(filename='need.xlsx')
 
 def cetunpie():
