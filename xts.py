@@ -94,13 +94,12 @@ elif stundas == 8:
 app = Flask(__name__)
 
 @app.route('/sheet')
-def hello():    
-    df = pd.read_excel('need.xlsx')
-    return df.to_html()
-
-@app.route('/work')
-def test():
-    return render_template('hello.html')
+def hello():
+    if stundas == 0:
+        return render_template('hello.html')
+    if stundas > 0:
+        df = pd.read_excel('need.xlsx')
+        return df.to_html()
 
 if __name__ == '__main__':
     app.run()
