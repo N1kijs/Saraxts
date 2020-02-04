@@ -101,7 +101,6 @@ class Scheduler(object):
             job.run()
 while True:
     schedule.run_pending()
-    time.sleep(1)
 
 schedule.every().monday.at("07:20").do(piesk)
 schedule.every().monday.at("08:50").do(piesk)
