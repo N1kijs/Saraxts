@@ -4,7 +4,7 @@ from openpyxl import Workbook, load_workbook
 workbook = load_workbook(filename='sheets/omegalul.xlsx')
 sheet = workbook.active
 
-sheet['B3']
+sheet.delete_rows(idx=5, amount=2)
 
 workbook.save(filename='need.xlsx')
 
