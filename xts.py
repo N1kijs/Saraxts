@@ -1,3 +1,5 @@
+import schedule
+import time
 import pandas as pd
 from flask import Flask, render_template
 from openpyxl import Workbook, load_workbook
@@ -5,11 +7,44 @@ from openpyxl import Workbook, load_workbook
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
 
-sheet.delete_rows(idx=6, amount=7)
-sheet.delete_rows(idx=10, amount=7)
-sheet.delete_rows(idx=14, amount=7)
+stundas = 23
 
-workbook.save(filename='need.xlsx')
+def pirunotr():
+    sheet.delete_rows(idx=6, amount=7)
+    sheet.delete_rows(idx=10, amount=7)
+    sheet.delete_rows(idx=14, amount=7)
+    workbook.save(filename='need.xlsx')
+
+def otruntre():
+    sheet.delete_rows(idx=4, amount=1)
+    workbook.save(filename='need.xlsx')
+
+def treuncet():
+    
+    workbook.save(filename='need.xlsx')
+
+def cetunpie():
+    
+    workbook.save(filename='need.xlsx')
+
+def pieunses():
+    
+    workbook.save(filename='need.xlsx')
+
+def sesunsep():
+    
+    workbook.save(filename='need.xlsx')
+
+def sepunast():
+
+    workbook.save(filename='need.xlsx')
+
+def astundev():
+
+    workbook.save(filename='need.xlsx')
+
+if stundas == 23
+    otruntre()
 
 app = Flask(__name__)
 
