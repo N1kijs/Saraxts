@@ -15,6 +15,7 @@ def pirunotr():
 
 def otruntre():
     sheet.delete_rows(idx=4, amount=1)
+    sheet.delete_rows(idx=6, amount=6)
     workbook.save(filename='need.xlsx')
 
 def treuncet():
