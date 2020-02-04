@@ -8,6 +8,12 @@ workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
 stundas = 0
 
+def piesk():
+    stundas + 1
+
+def nulite():
+    stundas == 0
+
 def pirunotr():
     sheet.delete_rows(idx=6, amount=7)
     sheet.delete_rows(idx=10, amount=7)
@@ -73,6 +79,17 @@ def astundev():
     sheet.delete_rows(idx=8, amount=7)
     sheet.delete_rows(idx=12, amount=7)
     workbook.save(filename='need.xlsx')
+
+schedule.every().monday.at("7:20").do(piesk)
+schedule.every().monday.at("8:50").do(piesk)
+schedule.every().monday.at("9:40").do(piesk)
+schedule.every().monday.at("10:30").do(piesk)
+schedule.every().monday.at("11:20").do(piesk)
+schedule.every().monday.at("12:10").do(piesk)
+schedule.every().monday.at("13:00").do(piesk)
+schedule.every().monday.at("13:50").do(piesk)
+schedule.every().monday.at("14:35").do(piesk)
+schedule.every().monday.at("16:20").do(nulite)
 
 if stundas == 1:
     pirunotr()
