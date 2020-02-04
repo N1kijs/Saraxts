@@ -1,7 +1,7 @@
 import pandas as pd
 from flask import Flask, render_template
 from openpyxl import load_workbook
-workbook = load_workbook(filename='omegalul.xlsx')
+workbook = load_workbook(filename='sheets/omegalul.xlsx')
 app = Flask(__name__)
 
 @app.route('/sheet')
