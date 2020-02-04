@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/sheet')
 def hello():
-    needs = sheet['B3'].value
+    needs = sheet['B3']
     df = needs
     return df.to_html()
 
