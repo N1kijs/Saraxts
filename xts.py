@@ -135,10 +135,6 @@ schedule.every().friday.at("13:50").do(piesk)
 schedule.every().friday.at("16:39").do(piesk)
 schedule.every().friday.at("16:20").do(nulite)
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
-
 if stundas == 1:
     pirunotr()
 elif stundas == 2:
@@ -168,3 +164,7 @@ def hello():
 
 if __name__ == '__main__':
     app.run()
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
