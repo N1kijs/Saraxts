@@ -9,7 +9,7 @@ app = Flask(__name__)
 def hello():
     needs = sheet['B3']
     df = needs
-    return df.to_html()
+    return df
 
 
 @app.route('/work')
