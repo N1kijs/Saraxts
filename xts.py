@@ -175,6 +175,3 @@ def hello():
 
 if __name__ == '__main__':
     app.run()
-
-while 1:
-    schedule.run_continuously()
