@@ -88,21 +88,20 @@ class Scheduler(object):
     def __init__(self):
         self.jobs = []
 
-def run_continuously(self, interval=1):
-    cease_continuous_run = threading.Event()
-
-    class ScheduleThread(threading.Thread):
-        @classmethod
-        def run(cls):
-            while not cease_continuous_run.is_set():
-                self.run_pending()
-                time.sleep(interval)
-
-    continuous_thread = ScheduleThread()
-    continuous_thread.start()
-    return cease_continuous_run
-
-
+    def run_pending(self):
+        """Run all jobs that are scheduled to run.
+        Please note that it is *intended behavior that tick() does not
+        run missed jobs*. For example, if you've registered a job that
+        should run every minute and you only call tick() in one hour
+        increments then your job won't be run 60 times in between but
+        only once.
+        """
+        runnable_jobs = (job for job in self.jobs if job.should_run)
+        for job in sorted(runnable_jobs):
+            job.run()
+while True:
+    schedule.run_pending()
+    time.sleep(1)
 
 schedule.every().monday.at("07:20").do(piesk)
 schedule.every().monday.at("08:50").do(piesk)
@@ -123,7 +122,7 @@ schedule.every().tuesday.at("11:20").do(piesk)
 schedule.every().tuesday.at("12:10").do(piesk)
 schedule.every().tuesday.at("13:00").do(piesk)
 schedule.every().tuesday.at("13:50").do(piesk)
-schedule.every().tuesday.at("17:12").do(piesk)
+schedule.every().tuesday.at("17:16").do(piesk)
 schedule.every().tuesday.at("16:20").do(nulite)
 
 schedule.every().wednesday.at("07:20").do(piesk)
