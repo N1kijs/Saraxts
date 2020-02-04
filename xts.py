@@ -80,9 +80,9 @@ def astundev():
     sheet.delete_rows(idx=12, amount=7)
     workbook.save(filename='need.xlsx')
 
-schedule.every().monday.at("7:20").do(piesk)
-schedule.every().monday.at("8:50").do(piesk)
-schedule.every().monday.at("9:40").do(piesk)
+schedule.every().monday.at("07:20").do(piesk)
+schedule.every().monday.at("08:50").do(piesk)
+schedule.every().monday.at("09:40").do(piesk)
 schedule.every().monday.at("10:30").do(piesk)
 schedule.every().monday.at("11:20").do(piesk)
 schedule.every().monday.at("12:10").do(piesk)
