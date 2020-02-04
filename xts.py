@@ -132,7 +132,7 @@ schedule.every().friday.at("11:20").do(piesk)
 schedule.every().friday.at("12:10").do(piesk)
 schedule.every().friday.at("13:00").do(piesk)
 schedule.every().friday.at("13:50").do(piesk)
-schedule.every().friday.at("14:35").do(piesk)
+schedule.every().friday.at("16:39").do(piesk)
 schedule.every().friday.at("16:20").do(nulite)
 
 while True:
