@@ -1,9 +1,11 @@
 import pandas as pd
+
 from flask import Flask
+
 from flask import render_template
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/sheet')
 def hello():
     df = pd.read_excel('C:\\Users\\gvido\\Desktop\\Projektu ned\\omegalul.xlsx')
     return df.to_html()
