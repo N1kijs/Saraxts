@@ -83,12 +83,20 @@ def astundev():
     sheet.delete_rows(idx=12, amount=7)
     workbook.save(filename='need.xlsx')
 
-def run_all(self, delay_seconds=0):
-    logger.info('Running *all* %i jobs with %is delay inbetween',
-                len(self.jobs), delay_seconds)
-    for job in self.jobs:
-        job.run()
-        time.sleep(delay_seconds)
+def run_continuously(self, interval=1):
+    cease_continuous_run = threading.Event()
+
+    class ScheduleThread(threading.Thread):
+        @classmethod
+        def run(cls):
+            while not cease_continuous_run.is_set():
+                self.run_pending()
+                time.sleep(interval)
+
+    continuous_thread = ScheduleThread()
+    continuous_thread.start()
+    return cease_continuous_run
+
 
 
 schedule.every().monday.at("07:20").do(piesk)
@@ -143,7 +151,7 @@ schedule.every().friday.at("11:20").do(piesk)
 schedule.every().friday.at("12:10").do(piesk)
 schedule.every().friday.at("13:00").do(piesk)
 schedule.every().friday.at("13:50").do(piesk)
-schedule.every().friday.at("16:53").do(piesk)
+schedule.every().friday.at("17:03").do(piesk)
 schedule.every().friday.at("16:20").do(nulite)
 
 if stundas == 1:
@@ -175,3 +183,7 @@ def hello():
 
 if __name__ == '__main__':
     app.run()
+
+while True:
+    schedule.run_continuosly()
+    time.sleep(1)
