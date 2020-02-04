@@ -118,7 +118,7 @@ schedule.every().tuesday.at("11:20").do(piesk)
 schedule.every().tuesday.at("12:10").do(piesk)
 schedule.every().tuesday.at("13:00").do(piesk)
 schedule.every().tuesday.at("13:50").do(piesk)
-schedule.every().tuesday.at("17:05").do(piesk)
+schedule.every().tuesday.at("17:08").do(piesk)
 schedule.every().tuesday.at("16:20").do(nulite)
 
 schedule.every().wednesday.at("07:20").do(piesk)
@@ -183,3 +183,5 @@ def hello():
 
 if __name__ == '__main__':
     app.run()
+
+run_continuously()
