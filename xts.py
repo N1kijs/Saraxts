@@ -62,7 +62,7 @@ def astundev():
     workbook.save(filename='need.xlsx')
 
 if stundas == 34:
-    cetunpie()
+    pieunses()
 
 app = Flask(__name__)
 
