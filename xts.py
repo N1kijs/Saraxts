@@ -41,7 +41,12 @@ def cetunpie():
     workbook.save(filename='need.xlsx')
 
 def pieunses():
-    
+    sheet.delete_rows(idx=4, amount=4)
+    sheet.delete_rows(idx=6, amount=3)
+    sheet.delete_rows(idx=8, amount=4)
+    sheet.delete_rows(idx=10, amount=3)
+    sheet.delete_rows(idx=12, amount=4)
+    sheet.delete_rows(idx=14, amount=3)
     workbook.save(filename='need.xlsx')
 
 def sesunsep():
