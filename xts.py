@@ -77,19 +77,19 @@ def astundev():
 
 if stundas == 1:
     pirunotr()
-if stundas == 2:
+elif stundas == 2:
     otruntre()
-if stundas == 3:
+elif stundas == 3:
     treuncet()
-if stundas == 4:
+elif stundas == 4:
     cetunpie()
-if stundas == 5:
+elif stundas == 5:
     pieunsest()
-if stundas == 6:
+elif stundas == 6:
     sesunsep()
-if stundas == 7:
+elif stundas == 7:
     sepunast()
-if stundas == 8:
+elif stundas == 8:
     astundev()
 
 app = Flask(__name__)
