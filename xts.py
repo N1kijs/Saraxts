@@ -132,7 +132,7 @@ schedule.every().friday.at("11:20").do(piesk)
 schedule.every().friday.at("12:10").do(piesk)
 schedule.every().friday.at("13:00").do(piesk)
 schedule.every().friday.at("13:50").do(piesk)
-schedule.every().friday.at("16:39").do(piesk)
+schedule.every().friday.at("16:48").do(piesk)
 schedule.every().friday.at("16:20").do(nulite)
 
 if stundas == 1:
@@ -165,6 +165,5 @@ def hello():
 if __name__ == '__main__':
     app.run()
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+while 1:
+    schedule.run_continuously()
