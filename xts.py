@@ -68,11 +68,13 @@ def sepunast():
     workbook.save(filename='need.xlsx')
 
 def astundev():
-
+    sheet.delete_rows(idx=4, amount=7)
+    sheet.delete_rows(idx=8, amount=7)
+    sheet.delete_rows(idx=12, amount=7)
     workbook.save(filename='need.xlsx')
 
 if stundas == 34:
-    sepunast()
+    astundev()
 
 app = Flask(__name__)
 
