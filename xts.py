@@ -7,6 +7,7 @@ import pandas as pd
 from flask import Flask, render_template
 from openpyxl import Workbook, load_workbook
 
+logger = logging.getLogger('schedule')
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
 stundas = 1
@@ -83,6 +84,10 @@ def astundev():
     sheet.delete_rows(idx=12, amount=7)
     workbook.save(filename='need.xlsx')
 
+class Scheduler(object):
+    def __init__(self):
+        self.jobs = []
+
 def run_continuously(self, interval=1):
     cease_continuous_run = threading.Event()
 
@@ -118,7 +123,7 @@ schedule.every().tuesday.at("11:20").do(piesk)
 schedule.every().tuesday.at("12:10").do(piesk)
 schedule.every().tuesday.at("13:00").do(piesk)
 schedule.every().tuesday.at("13:50").do(piesk)
-schedule.every().tuesday.at("17:08").do(piesk)
+schedule.every().tuesday.at("17:12").do(piesk)
 schedule.every().tuesday.at("16:20").do(nulite)
 
 schedule.every().wednesday.at("07:20").do(piesk)
@@ -183,5 +188,3 @@ def hello():
 
 if __name__ == '__main__':
     app.run()
-
-run_continuously(self)
