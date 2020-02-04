@@ -43,7 +43,7 @@ def astundev():
 
     workbook.save(filename='need.xlsx')
 
-if stundas == 23
+if stundas == 23:
     otruntre()
 
 app = Flask(__name__)
