@@ -5,7 +5,7 @@ from openpyxl import Workbook, load_workbook
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
 
-stundas = 23
+stundas = 34
 
 def pirunotr():
     sheet.delete_rows(idx=6, amount=7)
@@ -46,8 +46,8 @@ def astundev():
 
     workbook.save(filename='need.xlsx')
 
-if stundas == 23:
-    otruntre()
+if stundas == 34:
+    treuncet()
 
 app = Flask(__name__)
 
