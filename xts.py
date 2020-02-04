@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/sheet')
 def hello():
-    df = pd.read_excel('C:\\Users\\gvido\\Desktop\\Projektu ned\\omegalul.xlsx')
+    df = pd.read_excel("C:\Users\gvido\Desktop\bruh\omegalul.xlsx")
     return df.to_html()
 
 @app.route('/work')
