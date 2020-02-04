@@ -184,4 +184,4 @@ def hello():
 if __name__ == '__main__':
     app.run()
 
-run_continuously()
+run_continuously(self)
