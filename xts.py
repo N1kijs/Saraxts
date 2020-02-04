@@ -118,7 +118,7 @@ schedule.every().tuesday.at("11:20").do(piesk)
 schedule.every().tuesday.at("12:10").do(piesk)
 schedule.every().tuesday.at("13:00").do(piesk)
 schedule.every().tuesday.at("13:50").do(piesk)
-schedule.every().tuesday.at("14:35").do(piesk)
+schedule.every().tuesday.at("17:04").do(piesk)
 schedule.every().tuesday.at("16:20").do(nulite)
 
 schedule.every().wednesday.at("07:20").do(piesk)
@@ -151,7 +151,7 @@ schedule.every().friday.at("11:20").do(piesk)
 schedule.every().friday.at("12:10").do(piesk)
 schedule.every().friday.at("13:00").do(piesk)
 schedule.every().friday.at("13:50").do(piesk)
-schedule.every().friday.at("17:03").do(piesk)
+schedule.every().friday.at("14:35").do(piesk)
 schedule.every().friday.at("16:20").do(nulite)
 
 if stundas == 1:
