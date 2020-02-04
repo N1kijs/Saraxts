@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route('/sheet')
 def hello():
     
-    df = pd.read_excel('sheets/need.xlsx')
+    df = pd.read_excel('sheets/Pirmdiena.xlsx')
     return df.to_html()
 
 
