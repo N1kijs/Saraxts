@@ -1,7 +1,7 @@
 import pandas as pd
 from flask import Flask, render_template
 from openpyxl import Workbook, load_workbook
-workbook = load_workbook(filename='sheets/omegalul.xlsx')
+workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
 
 sheet.delete_rows(idx=5, amount=2)
@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route('/sheet')
 def hello():
     
-    df = pd.read_excel('sheets/4.-6.kl_27_I.xlsx')
+    df = pd.read_excel('sheets/need.xlsx')
     return df.to_html()
 
 
