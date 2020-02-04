@@ -1,4 +1,7 @@
 import schedule
+import functools
+import logging
+import threading
 import time
 import pandas as pd
 from flask import Flask, render_template
@@ -80,6 +83,14 @@ def astundev():
     sheet.delete_rows(idx=12, amount=7)
     workbook.save(filename='need.xlsx')
 
+def run_all(self, delay_seconds=0):
+    logger.info('Running *all* %i jobs with %is delay inbetween',
+                len(self.jobs), delay_seconds)
+    for job in self.jobs:
+        job.run()
+        time.sleep(delay_seconds)
+
+
 schedule.every().monday.at("07:20").do(piesk)
 schedule.every().monday.at("08:50").do(piesk)
 schedule.every().monday.at("09:40").do(piesk)
@@ -132,7 +143,7 @@ schedule.every().friday.at("11:20").do(piesk)
 schedule.every().friday.at("12:10").do(piesk)
 schedule.every().friday.at("13:00").do(piesk)
 schedule.every().friday.at("13:50").do(piesk)
-schedule.every().friday.at("16:48").do(piesk)
+schedule.every().friday.at("16:53").do(piesk)
 schedule.every().friday.at("16:20").do(nulite)
 
 if stundas == 1:
