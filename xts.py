@@ -7,14 +7,14 @@ sheet = workbook.active
 
 sheet.delete_rows(idx=6, amount=7)
 sheet.delete_rows(idx=10, amount=7)
+sheet.delete_rows(idx=14, amount=7)
 
 workbook.save(filename='need.xlsx')
 
 app = Flask(__name__)
 
 @app.route('/sheet')
-def hello():
-    
+def hello():    
     df = pd.read_excel('need.xlsx')
     return df.to_html()
 
