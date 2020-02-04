@@ -6,7 +6,7 @@ from openpyxl import Workbook, load_workbook
 
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
-stundas = 1
+stundas = 0
 
 def pirunotr():
     sheet.delete_rows(idx=6, amount=7)
