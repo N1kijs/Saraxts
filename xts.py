@@ -183,7 +183,3 @@ def hello():
 
 if __name__ == '__main__':
     app.run()
-
-while True:
-    schedule.run_continuosly()
-    time.sleep(1)
