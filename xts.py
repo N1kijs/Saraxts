@@ -18,6 +18,7 @@ def piesk():
     global stundas
     stundas = stundas + 1
     print(stundas)
+    jif()
 
 def nulite():
     global stundas
