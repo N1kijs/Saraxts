@@ -1,12 +1,14 @@
 import schedule
 import time
+import datetime
 import pandas as pd
 from flask import Flask, render_template
 from openpyxl import Workbook, load_workbook
 
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
-stundas = 0
+stundas = 1
+dienas = 0
 
 def piesk():
     global stundas
@@ -15,6 +17,15 @@ def piesk():
 def nulite():
     global stundas
     stundas = 0
+    global dienas
+    dienas += 1
+
+def nulitedivi():
+    global stundas
+    stundas = 0
+    global dienas
+    dienas = 0
+
 
 def pirunotr():
     sheet.delete_rows(idx=6, amount=8)
@@ -116,7 +127,7 @@ schedule.every().tuesday.at("16:20").do(nulite)
 schedule.every().wednesday.at("07:20").do(piesk)
 schedule.every().wednesday.at("08:50").do(piesk)
 schedule.every().wednesday.at("09:40").do(piesk)
-schedule.every().wednesday.at("10:08").do(piesk)
+schedule.every().wednesday.at("10:20").do(piesk)
 schedule.every().wednesday.at("11:20").do(piesk)
 schedule.every().wednesday.at("12:10").do(piesk)
 schedule.every().wednesday.at("13:00").do(piesk)
@@ -144,7 +155,7 @@ schedule.every().friday.at("12:10").do(piesk)
 schedule.every().friday.at("13:00").do(piesk)
 schedule.every().friday.at("13:50").do(piesk)
 schedule.every().friday.at("14:35").do(piesk)
-schedule.every().friday.at("16:20").do(nulite)
+schedule.every().friday.at("16:20").do(nulitedivi)
 
 if stundas == 1:
     pirunotr()
