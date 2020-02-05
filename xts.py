@@ -159,6 +159,9 @@ schedule.every(1).minutes.do(nulite)
 # schedule.every().friday.at("14:35").do(piesk)
 # schedule.every().friday.at("16:20").do(nulitedivi)
 
+while True:
+    schedule.run_pending()
+
 if stundas == 1:
     pirunotr()
 elif stundas == 2:
