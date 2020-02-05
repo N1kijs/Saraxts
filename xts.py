@@ -8,7 +8,6 @@ workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
 stundas = 0
 dienas = 0
-memes()
 
 def piesk():
     global stundas
@@ -163,6 +162,8 @@ def memes():
 # schedule.every().friday.at("13:50").do(piesk)
 # schedule.every().friday.at("14:35").do(piesk)
 # schedule.every().friday.at("16:20").do(nulitedivi)
+
+memes()
 
 if stundas == 1:
     pirunotr()
