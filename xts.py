@@ -8,6 +8,7 @@ workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
 stundas = 0
 dienas = 0
+memes()
 
 def piesk():
     global stundas
