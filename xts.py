@@ -11,7 +11,6 @@ stundas = 0
 def piesk():
     global stundas
     stundas += 1
-    print(stundas)
 
 def nulite():
     global stundas
