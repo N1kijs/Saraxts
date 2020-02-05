@@ -32,7 +32,7 @@ def pirunotr():
     sheet.delete_rows(idx=14, amount=8)
     workbook.save(filename='need.xlsx')
     global stundas
-    stundas = stundas+1
+    stundas = stundas + 1
 
 def otruntre():
     sheet.delete_rows(idx=4, amount=1)
