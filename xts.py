@@ -215,9 +215,8 @@ def hello():
     if stundas == 0:
         return render_template('hello.html')
     elif stundas >= 1:
-        df = pd.read_excel('need.xlsx')
+        df = pd.read_excel('need.xlsx'), render_template('hello.html')
         return df.to_html()
-        return render_template('hello.html')
 
 if __name__ == '__main__':
     app.run()
