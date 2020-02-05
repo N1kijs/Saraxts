@@ -101,8 +101,12 @@ def devundes():
     sheet.delete_rows(idx=12, amount=8)
     workbook.save(filename='need.xlsx')
 
-schedule.every(0.1).minutes.do(piesk)
-schedule.every(1).minutes.do(nulite)
+def memes():
+    schedule.every(0.1).minutes.do(piesk)
+    schedule.every(1).minutes.do(nulite)
+
+    while True:
+        schedule.run_pending
 
 # schedule.every().monday.at("07:20").do(piesk)
 # schedule.every().monday.at("08:50").do(piesk)
@@ -192,4 +196,4 @@ if __name__ == '__main__':
     app.run()
 
 while True:
-    schedule.run_all(delay_seconds=0)
+    schedule.run_pending
