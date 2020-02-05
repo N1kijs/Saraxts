@@ -6,18 +6,18 @@ from openpyxl import Workbook, load_workbook
 
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
-stundas = 1
+stundas = 0
 dienas = 0
 
 def piesk():
     global stundas
-    stundas = stundas+1
+    stundas = stundas + 1
 
 def nulite():
     global stundas
     stundas = 0
     global dienas
-    dienas = dienas+1
+    dienas = dienas + 1
 
 def nulitedivi():
     global stundas
@@ -25,14 +25,11 @@ def nulitedivi():
     global dienas
     dienas = 0
 
-
 def pirunotr():
     sheet.delete_rows(idx=6, amount=8)
     sheet.delete_rows(idx=10, amount=8)
     sheet.delete_rows(idx=14, amount=8)
     workbook.save(filename='need.xlsx')
-    global stundas
-    stundas = stundas + 1
 
 def otruntre():
     sheet.delete_rows(idx=4, amount=1)
@@ -103,60 +100,63 @@ def devundes():
     sheet.delete_rows(idx=12, amount=8)
     workbook.save(filename='need.xlsx')
 
-schedule.every().monday.at("07:20").do(piesk)
-schedule.every().monday.at("08:50").do(piesk)
-schedule.every().monday.at("09:40").do(piesk)
-schedule.every().monday.at("10:30").do(piesk)
-schedule.every().monday.at("11:20").do(piesk)
-schedule.every().monday.at("12:10").do(piesk)
-schedule.every().monday.at("13:00").do(piesk)
-schedule.every().monday.at("13:50").do(piesk)
-schedule.every().monday.at("14:35").do(piesk)
-schedule.every().monday.at("16:20").do(nulite)
+schedule.every(0.1).minutes.do(piesk)
+schedule.every(1).minutes.do(nulite)
 
-schedule.every().tuesday.at("07:20").do(piesk)
-schedule.every().tuesday.at("08:50").do(piesk)
-schedule.every().tuesday.at("09:40").do(piesk)
-schedule.every().tuesday.at("10:30").do(piesk)
-schedule.every().tuesday.at("11:20").do(piesk)
-schedule.every().tuesday.at("12:10").do(piesk)
-schedule.every().tuesday.at("13:00").do(piesk)
-schedule.every().tuesday.at("13:50").do(piesk)
-schedule.every().tuesday.at("14:35").do(piesk)
-schedule.every().tuesday.at("16:20").do(nulite)
+# schedule.every().monday.at("07:20").do(piesk)
+# schedule.every().monday.at("08:50").do(piesk)
+# schedule.every().monday.at("09:40").do(piesk)
+# schedule.every().monday.at("10:30").do(piesk)
+# schedule.every().monday.at("11:20").do(piesk)
+# schedule.every().monday.at("12:10").do(piesk)
+# schedule.every().monday.at("13:00").do(piesk)
+# schedule.every().monday.at("13:50").do(piesk)
+# schedule.every().monday.at("14:35").do(piesk)
+# schedule.every().monday.at("16:20").do(nulite)
 
-schedule.every().wednesday.at("07:20").do(piesk)
-schedule.every().wednesday.at("08:50").do(piesk)
-schedule.every().wednesday.at("09:40").do(piesk)
-schedule.every().wednesday.at("10:30").do(piesk)
-schedule.every().wednesday.at("11:20").do(piesk)
-schedule.every().wednesday.at("12:10").do(piesk)
-schedule.every().wednesday.at("13:00").do(piesk)
-schedule.every().wednesday.at("13:50").do(piesk)
-schedule.every().wednesday.at("14:35").do(piesk)
-schedule.every().wednesday.at("16:20").do(nulite)
+# schedule.every().tuesday.at("07:20").do(piesk)
+# schedule.every().tuesday.at("08:50").do(piesk)
+# schedule.every().tuesday.at("09:40").do(piesk)
+# schedule.every().tuesday.at("10:30").do(piesk)
+# schedule.every().tuesday.at("11:20").do(piesk)
+# schedule.every().tuesday.at("12:10").do(piesk)
+# schedule.every().tuesday.at("13:00").do(piesk)
+# schedule.every().tuesday.at("13:50").do(piesk)
+# schedule.every().tuesday.at("14:35").do(piesk)
+# schedule.every().tuesday.at("16:20").do(nulite)
 
-schedule.every().thursday.at("07:20").do(piesk)
-schedule.every().thursday.at("08:50").do(piesk)
-schedule.every().thursday.at("09:40").do(piesk)
-schedule.every().thursday.at("10:30").do(piesk)
-schedule.every().thursday.at("11:20").do(piesk)
-schedule.every().thursday.at("12:10").do(piesk)
-schedule.every().thursday.at("13:00").do(piesk)
-schedule.every().thursday.at("13:50").do(piesk)
-schedule.every().thursday.at("14:35").do(piesk)
-schedule.every().thursday.at("16:20").do(nulite)
+# schedule.every().wednesday.at("07:20").do(piesk)
+# schedule.every().wednesday.at("08:50").do(piesk)
+# schedule.every().wednesday.at("09:40").do(piesk)
+# schedule.every().wednesday.at("10:30").do(piesk)
+# schedule.every().wednesday.at("11:20").do(piesk)
+# schedule.every().wednesday.at("12:10").do(piesk)
+# schedule.every().wednesday.at("13:00").do(piesk)
+# schedule.every().wednesday.at("13:50").do(piesk)
+# schedule.every().wednesday.at("14:35").do(piesk)
+# schedule.every().wednesday.at("16:20").do(nulite)
 
-schedule.every().friday.at("07:20").do(piesk)
-schedule.every().friday.at("08:50").do(piesk)
-schedule.every().friday.at("09:40").do(piesk)
-schedule.every().friday.at("10:30").do(piesk)
-schedule.every().friday.at("11:20").do(piesk)
-schedule.every().friday.at("12:10").do(piesk)
-schedule.every().friday.at("13:00").do(piesk)
-schedule.every().friday.at("13:50").do(piesk)
-schedule.every().friday.at("14:35").do(piesk)
-schedule.every().friday.at("16:20").do(nulitedivi)
+# schedule.every().thursday.at("07:20").do(piesk)
+# schedule.every().thursday.at("08:50").do(piesk)
+# schedule.every().thursday.at("09:40").do(piesk)
+# schedule.every().thursday.at("10:30").do(piesk)
+# schedule.every().thursday.at("11:20").do(piesk)
+# schedule.every().thursday.at("12:10").do(piesk)
+# schedule.every().thursday.at("13:00").do(piesk)
+# schedule.every().thursday.at("13:50").do(piesk)
+# schedule.every().thursday.at("14:35").do(piesk)
+# schedule.every().thursday.at("16:20").do(nulite)
+
+# schedule.every().friday.at("07:20").do(piesk)
+# schedule.every().friday.at("08:50").do(piesk)
+# schedule.every().friday.at("09:40").do(piesk)
+# schedule.every().friday.at("10:30").do(piesk)
+# schedule.every().friday.at("11:20").do(piesk)
+# schedule.every().friday.at("12:10").do(piesk)
+# schedule.every().friday.at("13:00").do(piesk)
+# schedule.every().friday.at("13:50").do(piesk)
+# schedule.every().friday.at("14:35").do(piesk)
+# schedule.every().friday.at("16:20").do(nulitedivi)
 
 if stundas == 1:
     pirunotr()
