@@ -13,5 +13,4 @@ def gaynt():
 schedule.every().wednesday.at("09:07").do(gay)
 
 while True:
-    schedule.run_pending() 
-    time.sleep(1)
+    schedule.run_pending()
