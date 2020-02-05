@@ -11,11 +11,11 @@ def gay():
 
 def gaynt():
     global memes
-    memes == 0
+    memes = 0
     print(memes)
     
-schedule.every().wednesday.at("09:54").do(gay)
-schedule.every().wednesday.at("09:55").do(gaynt) 
+schedule.every().wednesday.at("09:57").do(gay)
+schedule.every().wednesday.at("09:58").do(gaynt) 
 
 while True:
     schedule.run_pending()
