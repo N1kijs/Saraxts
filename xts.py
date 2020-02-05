@@ -6,13 +6,12 @@ from openpyxl import Workbook, load_workbook
 
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
-stundas = 4
+stundas = 1
 dienas = 0
 
 def piesk():
     global stundas
     stundas = stundas+1
-    ight()
 
 def nulite():
     global stundas
@@ -157,9 +156,10 @@ schedule.every().friday.at("13:50").do(piesk)
 schedule.every().friday.at("14:35").do(piesk)
 schedule.every().friday.at("16:20").do(nulitedivi)
 
-def ight():
     if stundas == 1:
         pirunotr()
+        global stundas
+        stundas = stundas+1
     elif stundas == 2:
         otruntre()
     elif stundas == 3:
