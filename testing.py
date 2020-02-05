@@ -11,7 +11,7 @@ def gay():
 def gaynt():
     memes == 0
     
-schedule.every().day.at("09:21").do(gay) 
+schedule.every().day.at("09:25:00").do(gay) 
 
 while True:
     schedule.run_pending()
