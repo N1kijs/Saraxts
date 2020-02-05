@@ -19,9 +19,9 @@ def nulite():
     stundas == 0
 
 def pirunotr():
-    sheet.delete_rows(idx=6, amount=7)
-    sheet.delete_rows(idx=10, amount=7)
-    sheet.delete_rows(idx=14, amount=7)
+    sheet.delete_rows(idx=6, amount=8)
+    sheet.delete_rows(idx=10, amount=8)
+    sheet.delete_rows(idx=14, amount=8)
     workbook.save(filename='need.xlsx')
 
 def otruntre():
