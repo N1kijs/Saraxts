@@ -5,13 +5,13 @@ import schedule
 memes = 0
 
 def gay():
-    memes +1
+    memes + 1
     print(memes)
 
 def gaynt():
     memes == 0
     
-schedule.every(1).minutes.do(gay) 
+schedule.every().day.at("09:21").do(gay) 
 
 while True:
     schedule.run_pending()
