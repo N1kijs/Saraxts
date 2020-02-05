@@ -31,6 +31,7 @@ def pirunotr():
     sheet.delete_rows(idx=10, amount=8)
     sheet.delete_rows(idx=14, amount=8)
     workbook.save(filename='need.xlsx')
+    stundas = stundas+1
 
 def otruntre():
     sheet.delete_rows(idx=4, amount=1)
