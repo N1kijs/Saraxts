@@ -1,4 +1,5 @@
 import time
+import datetime
 import schedule
 
 memes = 0
@@ -10,7 +11,7 @@ def gay():
 def gaynt():
     memes == 0
     
-schedule.every().wednesday.at("09:10").do(gay)
+schedule.every().wednesday.at("09:12").do(gay)
 
 while True:
     schedule.run_pending()
