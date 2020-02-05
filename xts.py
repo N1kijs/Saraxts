@@ -11,7 +11,6 @@ sheet = workbook.active
 stundas = 0
 dienas = 0
 
-schedule.every(1).seconds.do(sched.job)
 t = Thread(target=sched.run_schedule)
 t.start()
 
