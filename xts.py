@@ -190,4 +190,6 @@ def hello():
 
 if __name__ == '__main__':
     app.run()
-    schedule.run_pending()
+
+while True:
+    schedule.run_all(delay_seconds=0)
