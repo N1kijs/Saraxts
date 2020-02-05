@@ -157,7 +157,7 @@ elif stundas == 3:
 elif stundas == 4:
     cetunpie()
 elif stundas == 5:
-    pieunsest()
+    pieunses()
 elif stundas == 6:
     sesunsep()
 elif stundas == 7:
