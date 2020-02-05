@@ -216,7 +216,8 @@ def hello():
         return render_template('hello.html')
     elif stundas >= 1:
         df = pd.read_excel('need.xlsx')
-        bruh = [df.to_html(), 'hello.html']
+        lg = df.to_html()
+        bruh = [lg, 'hello.html']
         return render_template(bruh)
 
 if __name__ == '__main__':
