@@ -10,7 +10,7 @@ from openpyxl import Workbook, load_workbook
 logger = logging.getLogger('schedule')
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
-stundas = 3
+stundas = 5
 
 def piesk():
     stundas + 1
@@ -44,53 +44,53 @@ def treuncet():
 
 def cetunpie():
     sheet.delete_rows(idx=4, amount=3)
-    sheet.delete_rows(idx=6, amount=4)
+    sheet.delete_rows(idx=6, amount=5)
     sheet.delete_rows(idx=8, amount=3)
-    sheet.delete_rows(idx=10, amount=4)
+    sheet.delete_rows(idx=10, amount=5)
     sheet.delete_rows(idx=12, amount=3)
-    sheet.delete_rows(idx=14, amount=4)
+    sheet.delete_rows(idx=14, amount=5)
     workbook.save(filename='need.xlsx')
 
 def pieunses():
     sheet.delete_rows(idx=4, amount=4)
-    sheet.delete_rows(idx=6, amount=3)
+    sheet.delete_rows(idx=6, amount=4)
     sheet.delete_rows(idx=8, amount=4)
-    sheet.delete_rows(idx=10, amount=3)
+    sheet.delete_rows(idx=10, amount=4)
     sheet.delete_rows(idx=12, amount=4)
-    sheet.delete_rows(idx=14, amount=3)
+    sheet.delete_rows(idx=14, amount=4)
     workbook.save(filename='need.xlsx')
 
 def sesunsep():
     sheet.delete_rows(idx=4, amount=5)
-    sheet.delete_rows(idx=6, amount=2)
+    sheet.delete_rows(idx=6, amount=3)
     sheet.delete_rows(idx=8, amount=5)
-    sheet.delete_rows(idx=10, amount=2)
+    sheet.delete_rows(idx=10, amount=3)
     sheet.delete_rows(idx=12, amount=5)
-    sheet.delete_rows(idx=14, amount=2)
+    sheet.delete_rows(idx=14, amount=3)
     workbook.save(filename='need.xlsx')
 
 def sepunast():
     sheet.delete_rows(idx=4, amount=6)
-    sheet.delete_rows(idx=6, amount=1)
+    sheet.delete_rows(idx=6, amount=2)
     sheet.delete_rows(idx=8, amount=6)
-    sheet.delete_rows(idx=10, amount=1)
+    sheet.delete_rows(idx=10, amount=2)
     sheet.delete_rows(idx=12, amount=6)
-    sheet.delete_rows(idx=14, amount=1)
+    sheet.delete_rows(idx=14, amount=2)
     workbook.save(filename='need.xlsx')
 
 def astundev():
-    sheet.delete_rows(idx=4, amount=6)
+    sheet.delete_rows(idx=4, amount=7)
     sheet.delete_rows(idx=6, amount=1)
-    sheet.delete_rows(idx=8, amount=6)
+    sheet.delete_rows(idx=8, amount=7)
     sheet.delete_rows(idx=10, amount=1)
-    sheet.delete_rows(idx=12, amount=6)
+    sheet.delete_rows(idx=12, amount=7)
     sheet.delete_rows(idx=14, amount=1)
     workbook.save(filename='need.xlsx')
 
 def devundes():
-    sheet.delete_rows(idx=4, amount=7)
-    sheet.delete_rows(idx=8, amount=7)
-    sheet.delete_rows(idx=12, amount=7)
+    sheet.delete_rows(idx=4, amount=8)
+    sheet.delete_rows(idx=8, amount=8)
+    sheet.delete_rows(idx=12, amount=8)
     workbook.save(filename='need.xlsx')
 
 # schedule.every().monday.at("07:20").do(piesk)
