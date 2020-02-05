@@ -1,6 +1,5 @@
 import schedule
 import time
-import datetime
 import pandas as pd
 from flask import Flask, render_template
 from openpyxl import Workbook, load_workbook
@@ -12,13 +11,13 @@ dienas = 0
 
 def piesk():
     global stundas
-    stundas += 1
+    stundas = stundas+1
 
 def nulite():
     global stundas
     stundas = 0
     global dienas
-    dienas += 1
+    dienas = dienas+1
 
 def nulitedivi():
     global stundas
@@ -127,7 +126,7 @@ schedule.every().tuesday.at("16:20").do(nulite)
 schedule.every().wednesday.at("07:20").do(piesk)
 schedule.every().wednesday.at("08:50").do(piesk)
 schedule.every().wednesday.at("09:40").do(piesk)
-schedule.every().wednesday.at("10:20").do(piesk)
+schedule.every().wednesday.at("10:26").do(piesk)
 schedule.every().wednesday.at("11:20").do(piesk)
 schedule.every().wednesday.at("12:10").do(piesk)
 schedule.every().wednesday.at("13:00").do(piesk)
