@@ -6,10 +6,11 @@ import pandas as pd
 from flask import Flask, render_template
 from openpyxl import Workbook, load_workbook
 
-workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
+workbook = load_workbook(filename=beans)
 sheet = workbook.active
 stundas = 0
 dienas = 0
+beans = 'sheets/Pirmdiena.xlsx'
 
 t = Thread(target=sched.run_schedule)
 t.start()
@@ -33,12 +34,14 @@ def nulitedivi():
     dienas = 0
 
 def pirunotr():
+    workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=6, amount=8)
     sheet.delete_rows(idx=10, amount=8)
     sheet.delete_rows(idx=14, amount=8)
     workbook.save(filename='need.xlsx')
 
 def otruntre():
+    workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=1)
     sheet.delete_rows(idx=6, amount=7)
     sheet.delete_rows(idx=8, amount=1)
@@ -48,6 +51,7 @@ def otruntre():
     workbook.save(filename='need.xlsx')
 
 def treuncet():
+    workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=2)
     sheet.delete_rows(idx=6, amount=6)
     sheet.delete_rows(idx=8, amount=2)
@@ -57,6 +61,7 @@ def treuncet():
     workbook.save(filename='need.xlsx')
 
 def cetunpie():
+    workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=3)
     sheet.delete_rows(idx=6, amount=5)
     sheet.delete_rows(idx=8, amount=3)
@@ -65,7 +70,8 @@ def cetunpie():
     sheet.delete_rows(idx=14, amount=5)
     workbook.save(filename='need.xlsx')
 
-def pieunses():
+def pieunses():    
+    workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=4)
     sheet.delete_rows(idx=6, amount=4)
     sheet.delete_rows(idx=8, amount=4)
@@ -75,6 +81,7 @@ def pieunses():
     workbook.save(filename='need.xlsx')
 
 def sesunsep():
+    workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=5)
     sheet.delete_rows(idx=6, amount=3)
     sheet.delete_rows(idx=8, amount=5)
@@ -84,6 +91,7 @@ def sesunsep():
     workbook.save(filename='need.xlsx')
 
 def sepunast():
+    workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=6)
     sheet.delete_rows(idx=6, amount=2)
     sheet.delete_rows(idx=8, amount=6)
@@ -93,6 +101,7 @@ def sepunast():
     workbook.save(filename='need.xlsx')
 
 def astundev():
+    workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=7)
     sheet.delete_rows(idx=6, amount=1)
     sheet.delete_rows(idx=8, amount=7)
@@ -102,6 +111,7 @@ def astundev():
     workbook.save(filename='need.xlsx')
 
 def devundes():
+    workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=8)
     sheet.delete_rows(idx=8, amount=8)
     sheet.delete_rows(idx=12, amount=8)
