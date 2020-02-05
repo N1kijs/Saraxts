@@ -10,7 +10,7 @@ from openpyxl import Workbook, load_workbook
 logger = logging.getLogger('schedule')
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
-stundas = 2
+stundas = 3
 
 def piesk():
     stundas + 1
@@ -79,6 +79,15 @@ def sepunast():
     workbook.save(filename='need.xlsx')
 
 def astundev():
+    sheet.delete_rows(idx=4, amount=6)
+    sheet.delete_rows(idx=6, amount=1)
+    sheet.delete_rows(idx=8, amount=6)
+    sheet.delete_rows(idx=10, amount=1)
+    sheet.delete_rows(idx=12, amount=6)
+    sheet.delete_rows(idx=14, amount=1)
+    workbook.save(filename='need.xlsx')
+
+def devundes():
     sheet.delete_rows(idx=4, amount=7)
     sheet.delete_rows(idx=8, amount=7)
     sheet.delete_rows(idx=12, amount=7)
@@ -155,6 +164,8 @@ elif stundas == 7:
     sepunast()
 elif stundas == 8:
     astundev()
+elif stundas == 9:
+    devundes()
 
 app = Flask(__name__)
 
