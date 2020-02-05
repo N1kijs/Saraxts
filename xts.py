@@ -10,7 +10,7 @@ from openpyxl import Workbook, load_workbook
 logger = logging.getLogger('schedule')
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
-stundas = 5
+stundas = 8
 
 def piesk():
     stundas + 1
