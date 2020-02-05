@@ -11,6 +11,7 @@ stundas = 0
 def piesk():
     global stundas
     stundas += 1
+    print(stundas)
 
 def nulite():
     global stundas
@@ -116,7 +117,7 @@ schedule.every().tuesday.at("16:20").do(nulite)
 schedule.every().wednesday.at("07:20").do(piesk)
 schedule.every().wednesday.at("08:50").do(piesk)
 schedule.every().wednesday.at("09:40").do(piesk)
-schedule.every().wednesday.at("10:02").do(piesk)
+schedule.every().wednesday.at("10:08").do(piesk)
 schedule.every().wednesday.at("11:20").do(piesk)
 schedule.every().wednesday.at("12:10").do(piesk)
 schedule.every().wednesday.at("13:00").do(piesk)
@@ -171,7 +172,7 @@ app = Flask(__name__)
 def hello():
     if stundas == 0:
         return render_template('hello.html')
-    elif stundas > 0:
+    elif stundas >= 1:
         df = pd.read_excel('need.xlsx')
         return df.to_html()
 
