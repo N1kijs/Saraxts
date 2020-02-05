@@ -6,7 +6,7 @@ from openpyxl import Workbook, load_workbook
 
 workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
-stundas = 1
+stundas = 0
 dienas = 0
 
 def piesk():
