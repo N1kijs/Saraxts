@@ -5,12 +5,12 @@ memes = 0
 
 def gay():
     memes +1
-    print memes
+    print(memes)
 
 def gaynt():
     memes == 0
     
-schedule.every().wednesday.at("08:53").do(gay)
+schedule.every().wednesday.at("08:55").do(gay)
 
 while True:
     schedule.run_pending() 
