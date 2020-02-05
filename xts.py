@@ -1,4 +1,6 @@
 import schedule
+from threading import Thread
+import sched
 import time
 import pandas as pd
 from flask import Flask, render_template
@@ -8,6 +10,10 @@ workbook = load_workbook(filename='sheets/Pirmdiena.xlsx')
 sheet = workbook.active
 stundas = 0
 dienas = 0
+
+schedule.every(1).seconds.do(sched.job)
+t = Thread(target=sched.run_schedule)
+t.start()
 
 def piesk():
     global stundas
@@ -100,13 +106,9 @@ def devundes():
     sheet.delete_rows(idx=8, amount=8)
     sheet.delete_rows(idx=12, amount=8)
     workbook.save(filename='need.xlsx')
-
-def memes():
-    schedule.every(0.1).minutes.do(piesk)
-    schedule.every(1).minutes.do(nulite)
-
-    while True:
-        schedule.run_pending
+ 
+schedule.every(10).seconds.do(piesk)
+schedule.every(1).minutes.do(nulite)
 
 # schedule.every().monday.at("07:20").do(piesk)
 # schedule.every().monday.at("08:50").do(piesk)
@@ -162,8 +164,6 @@ def memes():
 # schedule.every().friday.at("13:50").do(piesk)
 # schedule.every().friday.at("14:35").do(piesk)
 # schedule.every().friday.at("16:20").do(nulitedivi)
-
-memes()
 
 if stundas == 1:
     pirunotr()
