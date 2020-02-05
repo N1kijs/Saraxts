@@ -158,8 +158,6 @@ schedule.every().friday.at("16:20").do(nulitedivi)
 
     if stundas == 1:
         pirunotr()
-        global stundas
-        stundas = stundas+1
     elif stundas == 2:
         otruntre()
     elif stundas == 3:
