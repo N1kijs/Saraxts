@@ -34,6 +34,7 @@ def nulitedivi():
     dienas = 0
 
 def pirunotr():
+    global beans
     workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=6, amount=8)
     sheet.delete_rows(idx=10, amount=8)
@@ -41,6 +42,7 @@ def pirunotr():
     workbook.save(filename='need.xlsx')
 
 def otruntre():
+    global beans
     workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=1)
     sheet.delete_rows(idx=6, amount=7)
@@ -51,6 +53,7 @@ def otruntre():
     workbook.save(filename='need.xlsx')
 
 def treuncet():
+    global beans
     workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=2)
     sheet.delete_rows(idx=6, amount=6)
@@ -61,6 +64,7 @@ def treuncet():
     workbook.save(filename='need.xlsx')
 
 def cetunpie():
+    global beans
     workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=3)
     sheet.delete_rows(idx=6, amount=5)
@@ -70,7 +74,8 @@ def cetunpie():
     sheet.delete_rows(idx=14, amount=5)
     workbook.save(filename='need.xlsx')
 
-def pieunses():    
+def pieunses():
+    global beans    
     workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=4)
     sheet.delete_rows(idx=6, amount=4)
@@ -81,6 +86,7 @@ def pieunses():
     workbook.save(filename='need.xlsx')
 
 def sesunsep():
+    global beans
     workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=5)
     sheet.delete_rows(idx=6, amount=3)
@@ -91,6 +97,7 @@ def sesunsep():
     workbook.save(filename='need.xlsx')
 
 def sepunast():
+    global beans
     workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=6)
     sheet.delete_rows(idx=6, amount=2)
@@ -101,6 +108,7 @@ def sepunast():
     workbook.save(filename='need.xlsx')
 
 def astundev():
+    global beans
     workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=7)
     sheet.delete_rows(idx=6, amount=1)
@@ -111,6 +119,7 @@ def astundev():
     workbook.save(filename='need.xlsx')
 
 def devundes():
+    global beans
     workbook = load_workbook(filename=beans)
     sheet.delete_rows(idx=4, amount=8)
     sheet.delete_rows(idx=8, amount=8)
