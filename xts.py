@@ -35,11 +35,11 @@ def otruntre():
 
 def treuncet():
     sheet.delete_rows(idx=4, amount=2)
-    sheet.delete_rows(idx=6, amount=5)
+    sheet.delete_rows(idx=6, amount=6)
     sheet.delete_rows(idx=8, amount=2)
-    sheet.delete_rows(idx=10, amount=5)
+    sheet.delete_rows(idx=10, amount=6)
     sheet.delete_rows(idx=12, amount=2)
-    sheet.delete_rows(idx=14, amount=5)
+    sheet.delete_rows(idx=14, amount=6)
     workbook.save(filename='need.xlsx')
 
 def cetunpie():
