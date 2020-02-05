@@ -12,6 +12,7 @@ dienas = 0
 def piesk():
     global stundas
     stundas = stundas+1
+    ight()
 
 def nulite():
     global stundas
@@ -156,24 +157,25 @@ schedule.every().friday.at("13:50").do(piesk)
 schedule.every().friday.at("14:35").do(piesk)
 schedule.every().friday.at("16:20").do(nulitedivi)
 
-if stundas == 1:
-    pirunotr()
-elif stundas == 2:
-    otruntre()
-elif stundas == 3:
-    treuncet()
-elif stundas == 4:
-    cetunpie()
-elif stundas == 5:
-    pieunses()
-elif stundas == 6:
-    sesunsep()
-elif stundas == 7:
-    sepunast()
-elif stundas == 8:
-    astundev()
-elif stundas == 9:
-    devundes()
+def ight():
+    if stundas == 1:
+        pirunotr()
+    elif stundas == 2:
+        otruntre()
+    elif stundas == 3:
+        treuncet()
+    elif stundas == 4:
+        cetunpie()
+    elif stundas == 5:
+        pieunses()
+    elif stundas == 6:
+        sesunsep()
+    elif stundas == 7:
+        sepunast()
+    elif stundas == 8:
+        astundev()
+    elif stundas == 9:
+        devundes()
 
 app = Flask(__name__)
 
