@@ -26,11 +26,11 @@ def pirunotr():
 
 def otruntre():
     sheet.delete_rows(idx=4, amount=1)
-    sheet.delete_rows(idx=6, amount=6)
+    sheet.delete_rows(idx=6, amount=7)
     sheet.delete_rows(idx=8, amount=1)
-    sheet.delete_rows(idx=10, amount=6)
+    sheet.delete_rows(idx=10, amount=7)
     sheet.delete_rows(idx=12, amount=1)
-    sheet.delete_rows(idx=14, amount=6)
+    sheet.delete_rows(idx=14, amount=7)
     workbook.save(filename='need.xlsx')
 
 def treuncet():
