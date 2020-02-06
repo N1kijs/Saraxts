@@ -28,14 +28,14 @@ def piesk():
 def nulite():
     global stundas
     stundas = 0
-    global dienas
-    dienas = dienas + 1
+    global diena
+    diena = diena + 1
 
 def nulitedivi():
     global stundas
     stundas = 0
-    global dienas
-    dienas = 0
+    global diena
+    diena = 0
 
 def pirunotr():
     workbook = load_workbook(filename=pirmdiena)
