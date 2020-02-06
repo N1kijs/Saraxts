@@ -62,12 +62,14 @@ def nulite():
     stundas = 0
     global dienas
     dienas = dienas + 1
+    nakmad()
 
 def nulitedivi():
     global stundas
     stundas = 0
     global dienas
     dienas = 0
+    nakmad()
 
 def pirunotr():
     workbook = load_workbook(filename=diena)
