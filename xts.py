@@ -1,55 +1,56 @@
 import schedule
+import pandas as pd
+from openpyxl import Workbook, load_workbook
 from threading import Thread
 import sched
 import time
-import pandas as pd
 from flask import Flask, render_template
-from openpyxl import Workbook, load_workbook
 
-pirmdiena = 'sheets/Pirmdiena.xlsx'
-otrdiena = 'sheets/Otrdiena.xlsx'
-tresdiena = 'sheets/Trešdiena.xlsx'
-ceturtdiena = 'sheets/Ceturtdiena.xlsx'
-piektdiena = 'sheets/Piektdiena.xlsx'
-workbook = load_workbook(filename=pirmdiena)
+pirma = 'sheets/Pirmdiena.xlsx'
+otra = 'sheets/Otrdiena.xlsx'
+tresa = 'sheets/Trešdiena.xlsx'
+ceturta = 'sheets/Ceturtdiena.xlsx'
+piekta = 'sheets/Piektdiena.xlsx'
+diena = pirm
+workbook = load_workbook(filename=diena)
 sheet = workbook.active
 stundas = 0
-dienas = 0
-diena = pirmdiena
+dnr = 0
+
 
 t = Thread(target=sched.run_schedule)
 t.start()
 
 def pirm():
     global diena
-    diena = pirmdiena
+    diena = pirma
 
 def otr():
     global diena
-    diena = otrdiena
+    diena = otra
 
 def tres():
     global diena
-    diena = tresdiena
+    diena = tresa
 
 def ceturt():
     global diena
-    diena = ceturtdiena
+    diena = ceturta
 
 def piekt():
     global diena
-    diena = piektdiena
+    diena = piekta
 
 def nakmad():
-    if dienas == 0:
+    if dnr == 0:
         pirm()
-    elif dienas == 1:
+    elif dnr == 1:
         otr()
-    elif dienas == 2:
+    elif dnr == 2:
         tres()
-    elif diena == 3:
+    elif dnr == 3:
         ceturt()
-    elif dienas == 4:
+    elif dnr == 4:
         piekt()
 
 def piesk():
@@ -61,15 +62,15 @@ def piesk():
 def nulite():
     global stundas
     stundas = 0
-    global dienas
-    dienas = dienas + 1
+    global dnr
+    dnr = dnr + 1
     nakmad()
 
 def nulitedivi():
     global stundas
     stundas = 0
-    global dienas
-    dienas = 0
+    global dnr
+    dnr = 0
     nakmad()
 
 def pirunotr():
