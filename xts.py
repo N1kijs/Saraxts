@@ -14,7 +14,7 @@ piektdiena = 'sheets/Piektdiena.xlsx'
 workbook = load_workbook(filename=pirmdiena)
 sheet = workbook.active
 stundas = 0
-dienas = 0
+diena = 0
 
 t = Thread(target=sched.run_schedule)
 t.start()
@@ -130,8 +130,9 @@ def devundes():
     sheet.delete_rows(idx=12, amount=8)
     workbook.save(filename='need.xlsx')
  
-schedule.every(10).seconds.do(piesk)
+schedule.every(6).seconds.do(piesk)
 schedule.every(1).minutes.do(nulite)
+schedule.every(6).minutes.do(nulitedivi)
 
 # schedule.every().monday.at("07:20").do(piesk)
 # schedule.every().monday.at("08:50").do(piesk)
@@ -205,7 +206,7 @@ def jif():
         sepunast()
     elif stundas == 8:
         astundev()
-    elif stundas == 9:
+    elif stundas >= 9:
         devundes()
 
 app = Flask(__name__)
