@@ -11,7 +11,7 @@ otra = 'sheets/Otrdiena.xlsx'
 tresa = 'sheets/Trešdiena.xlsx'
 ceturta = 'sheets/Ceturtdiena.xlsx'
 piekta = 'sheets/Piektdiena.xlsx'
-diena = pirm
+diena = pirma
 workbook = load_workbook(filename=diena)
 sheet = workbook.active
 stundas = 0
