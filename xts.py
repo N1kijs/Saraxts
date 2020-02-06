@@ -23,7 +23,7 @@ def piesk():
     global stundas
     stundas = stundas + 1
     print(stundas)
-    jif()
+    #jif()
 
 def nulite():
     global stundas
@@ -189,25 +189,25 @@ schedule.every(6).minutes.do(nulitedivi)
 # schedule.every().friday.at("14:35").do(piesk)
 # schedule.every().friday.at("16:20").do(nulitedivi)
 
-def jif():
-    if stundas == 1:
-        pirunotr()
-    elif stundas == 2:
-        otruntre()
-    elif stundas == 3:
-        treuncet()
-    elif stundas == 4:
-        cetunpie()
-    elif stundas == 5:
-        pieunses()
-    elif stundas == 6:
-        sesunsep()
-    elif stundas == 7:
-        sepunast()
-    elif stundas == 8:
-        astundev()
-    elif stundas >= 9:
-        devundes()
+#def jif():
+if stundas == 1:
+    pirunotr()
+elif stundas == 2:
+    otruntre()
+elif stundas == 3:
+    treuncet()
+elif stundas == 4:
+    cetunpie()
+elif stundas == 5:
+    pieunses()
+elif stundas == 6:
+    sesunsep()
+elif stundas == 7:
+    sepunast()
+elif stundas == 8:
+    astundev()
+elif stundas >= 9:
+    devundes()
 
 app = Flask(__name__)
 
