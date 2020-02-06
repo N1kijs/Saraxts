@@ -15,6 +15,7 @@ workbook = load_workbook(filename=pirmdiena)
 sheet = workbook.active
 stundas = 0
 dienas = 0
+diena = pirmdiena
 
 t = Thread(target=sched.run_schedule)
 t.start()
