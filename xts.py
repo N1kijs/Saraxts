@@ -14,31 +14,63 @@ piektdiena = 'sheets/Piektdiena.xlsx'
 workbook = load_workbook(filename=pirmdiena)
 sheet = workbook.active
 stundas = 0
-diena = 0
+dienas = 0
 
 t = Thread(target=sched.run_schedule)
 t.start()
+
+def pirm():
+    global diena
+    diena = pirmdiena
+
+def otr():
+    global diena
+    diena = otrdiena
+
+def tres():
+    global diena
+    diena = tresdiena
+
+def ceturt():
+    global diena
+    diena = ceturtdiena
+
+def piekt():
+    global diena
+    diena = piektdiena
+
+def nakmad():
+    if dienas == 0:
+        pirm()
+    elif dienas == 1:
+        otr()
+    elif dienas == 2:
+        tres()
+    elif diena == 3:
+        ceturt()
+    elif dienas == 4:
+        piekt()
 
 def piesk():
     global stundas
     stundas = stundas + 1
     print(stundas)
-    #jif()
+    nakmas()
 
 def nulite():
     global stundas
     stundas = 0
-    global diena
-    diena = diena + 1
+    global dienas
+    dienas = dienas + 1
 
 def nulitedivi():
     global stundas
     stundas = 0
-    global diena
-    diena = 0
+    global dienas
+    dienas = 0
 
 def pirunotr():
-    workbook = load_workbook(filename=pirmdiena)
+    workbook = load_workbook(filename=diena)
     sheet = workbook.active
     sheet.delete_rows(idx=6, amount=8)
     sheet.delete_rows(idx=10, amount=8)
@@ -46,7 +78,7 @@ def pirunotr():
     workbook.save(filename='need.xlsx')
 
 def otruntre():
-    workbook = load_workbook(filename=pirmdiena)
+    workbook = load_workbook(filename=diena)
     sheet = workbook.active
     sheet.delete_rows(idx=4, amount=1)
     sheet.delete_rows(idx=6, amount=7)
@@ -57,7 +89,7 @@ def otruntre():
     workbook.save(filename='need.xlsx')
 
 def treuncet():
-    workbook = load_workbook(filename=pirmdiena)
+    workbook = load_workbook(filename=diena)
     sheet = workbook.active
     sheet.delete_rows(idx=4, amount=2)
     sheet.delete_rows(idx=6, amount=6)
@@ -68,7 +100,7 @@ def treuncet():
     workbook.save(filename='need.xlsx')
 
 def cetunpie():
-    workbook = load_workbook(filename=pirmdiena)
+    workbook = load_workbook(filename=diena)
     sheet = workbook.active
     sheet.delete_rows(idx=4, amount=3)
     sheet.delete_rows(idx=6, amount=5)
@@ -79,7 +111,7 @@ def cetunpie():
     workbook.save(filename='need.xlsx')
 
 def pieunses():
-    workbook = load_workbook(filename=pirmdiena)
+    workbook = load_workbook(filename=diena)
     sheet = workbook.active
     sheet.delete_rows(idx=4, amount=4)
     sheet.delete_rows(idx=6, amount=4)
@@ -90,7 +122,7 @@ def pieunses():
     workbook.save(filename='need.xlsx')
 
 def sesunsep():
-    workbook = load_workbook(filename=pirmdiena)
+    workbook = load_workbook(filename=diena)
     sheet = workbook.active
     sheet.delete_rows(idx=4, amount=5)
     sheet.delete_rows(idx=6, amount=3)
@@ -101,7 +133,7 @@ def sesunsep():
     workbook.save(filename='need.xlsx')
 
 def sepunast():
-    workbook = load_workbook(filename=pirmdiena)
+    workbook = load_workbook(filename=diena)
     sheet = workbook.active
     sheet.delete_rows(idx=4, amount=6)
     sheet.delete_rows(idx=6, amount=2)
@@ -112,7 +144,7 @@ def sepunast():
     workbook.save(filename='need.xlsx')
 
 def astundev():
-    workbook = load_workbook(filename=pirmdiena)
+    workbook = load_workbook(filename=diena)
     sheet = workbook.active
     sheet.delete_rows(idx=4, amount=7)
     sheet.delete_rows(idx=6, amount=1)
@@ -123,7 +155,7 @@ def astundev():
     workbook.save(filename='need.xlsx')
 
 def devundes():
-    workbook = load_workbook(filename=pirmdiena)
+    workbook = load_workbook(filename=diena)
     sheet = workbook.active
     sheet.delete_rows(idx=4, amount=8)
     sheet.delete_rows(idx=8, amount=8)
@@ -189,25 +221,25 @@ schedule.every(6).minutes.do(nulitedivi)
 # schedule.every().friday.at("14:35").do(piesk)
 # schedule.every().friday.at("16:20").do(nulitedivi)
 
-#def jif():
-if stundas == 1:
-    pirunotr()
-elif stundas == 2:
-    otruntre()
-elif stundas == 3:
-    treuncet()
-elif stundas == 4:
-    cetunpie()
-elif stundas == 5:
-    pieunses()
-elif stundas == 6:
-    sesunsep()
-elif stundas == 7:
-    sepunast()
-elif stundas == 8:
-    astundev()
-elif stundas >= 9:
-    devundes()
+def nakmas():
+    if stundas == 1:
+        pirunotr()
+    elif stundas == 2:
+        otruntre()
+    elif stundas == 3:
+        treuncet()
+    elif stundas == 4:
+        cetunpie()
+    elif stundas == 5:
+        pieunses()
+    elif stundas == 6:
+        sesunsep()
+    elif stundas == 7:
+        sepunast()
+    elif stundas == 8:
+        astundev()
+    elif stundas >= 9:
+        devundes()
 
 app = Flask(__name__)
 
