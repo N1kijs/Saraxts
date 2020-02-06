@@ -8,7 +8,7 @@ from flask import Flask, render_template
 
 pirma = 'sheets/Pirmdiena.xlsx'
 otra = 'sheets/Otrdiena.xlsx'
-tresa = 'sheets/Trešdiena.xlsx'
+tresa = 'sheets/Tresdiena.xlsx'
 ceturta = 'sheets/Ceturtdiena.xlsx'
 piekta = 'sheets/Piektdiena.xlsx'
 diena = pirma
@@ -253,7 +253,7 @@ def hello():
         return render_template('hello.html')
     elif stundas >= 1:
         df = pd.read_excel('need.xlsx')
-        return '{} {}'.format(df.to_html(), render_template('hello.html'))
+        return '{} {}' .format(df.to_html(), render_template('hello.html')
 
 if __name__ == '__main__':
     app.run()
